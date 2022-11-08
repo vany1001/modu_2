@@ -1,15 +1,22 @@
 package com.helloJava;
+import java.util.Date;
 import java.util.Scanner;
 public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        //getMonth();
-        tinhchisocannang();
+        // getMonth();
+        // tinhchisocannang();
+        // hienthithoigian();
+        // ptbacnhat();
+        // kiemtranamnhuan();
+        chuyendoitiente();
 
     }
+
     public static void getMonth() {
+        //Tính số ngày trong tháng
         int month;
         String daysInMonth;
         do {
@@ -58,5 +65,65 @@ public class Main {
         }
     }
 
+//    [Thực hành] Hiển thị thời gian của hệ thống
+    public static void hienthithoigian(){
+        Date now = new Date();
+        System.out.println("Thời gian hiện tại là: " + now);
+    }
+
+    public static void ptbacnhat(){
+
+        System.out.println("Nhập a");
+        double a = scanner.nextDouble();
+
+        System.out.println("Nhập b");
+        double b = scanner.nextDouble();
+
+        System.out.println("Nhập c");
+        double c = scanner.nextDouble();
+
+        if(a != 0) {
+            double x = (c - b) / a;
+            System.out.println("x = " + x);
+        } else {
+            System.out.println("phương trình vô nghiệm");
+        }
+    }
+
+    public static void kiemtranamnhuan(){
+        System.out.println("Nhập năm");
+        int year =scanner.nextInt();
+        if (year % 4 == 0) {
+            if (year % 100 == 0){
+                if (year % 400 == 0){
+                    System.out.println(year + ": là năm nhuận");
+                } else {
+                            System.out.println(year + ": là năm không nhuận");
+                }
+            } else {
+                System.out.println(year + ": là năm nhuận");
+            }
+        } else {
+            System.out.println(year + ": là năm không nhuận");
+        }
+
+    }
+
+    public static void chuyendoitiente(){
+        float rate = 23000f;
+        int usd;
+        do{
+            System.out.println("Nhap USD: ");
+            usd = scanner.nextInt();
+            if (usd <= -1) {
+                System.out.println("Số không hợp lệ");
+            } else if (usd > 1000000) {
+                System.out.println("Số không hợp lệ");
+            } else {
+                System.out.println("Số tiền VND là " + rate * usd);
+            }
+
+        } while (usd<=-1 || usd > 1000000);
+    }
 
 }
